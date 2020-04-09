@@ -114,12 +114,12 @@ passport.use(new FacebookStrategy({
 
 ///////////////////////////All Get Method /////////////////////////
 
-app.get('https://morning-island-46726.herokuapp.com/auth/google',
+app.get('/auth/google',
   passport.authenticate('google', {
     scope: ['profile']
   }));
 
-app.get('https://morning-island-46726.herokuapp.com/auth/google/jobs',
+app.get('/auth/google/jobs',
   passport.authenticate('google', {
     failureRedirect: '/login'
   }),
@@ -128,10 +128,10 @@ app.get('https://morning-island-46726.herokuapp.com/auth/google/jobs',
     res.redirect('/jobs');
   });
 
-app.get('https://morning-island-46726.herokuapp.com/auth/facebook',
+app.get('/auth/facebook',
   passport.authenticate('facebook'));
 
-app.get('https://morning-island-46726.herokuapp.com/auth/facebook/jobs',
+app.get('/auth/facebook/jobs',
   passport.authenticate('facebook', {
     failureRedirect: '/login'
   }),
