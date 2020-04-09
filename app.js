@@ -85,7 +85,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/jobs",
+    callbackURL: "https://morning-island-46726.herokuapp.com/auth/google/jobs",
     userProfileUrl: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -100,7 +100,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/jobs",
+    callbackURL: "https://morning-island-46726.herokuapp.com/auth/facebook/jobs",
     enableProof: true
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -114,12 +114,12 @@ passport.use(new FacebookStrategy({
 
 ///////////////////////////All Get Method /////////////////////////
 
-app.get('/auth/google',
+app.get('https://morning-island-46726.herokuapp.com/auth/google',
   passport.authenticate('google', {
     scope: ['profile']
   }));
 
-app.get('/auth/google/jobs',
+app.get('https://morning-island-46726.herokuapp.com/auth/google/jobs',
   passport.authenticate('google', {
     failureRedirect: '/login'
   }),
@@ -128,10 +128,10 @@ app.get('/auth/google/jobs',
     res.redirect('/jobs');
   });
 
-app.get('/auth/facebook',
+app.get('https://morning-island-46726.herokuapp.com/auth/facebook',
   passport.authenticate('facebook'));
 
-app.get('/auth/facebook/jobs',
+app.get('https://morning-island-46726.herokuapp.com/auth/facebook/jobs',
   passport.authenticate('facebook', {
     failureRedirect: '/login'
   }),
