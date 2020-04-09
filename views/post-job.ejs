@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Job Finder</title>
+<style type="text/css">
+/* body{
+background-image:url('job-png-hd-download-png-image-jobs-png-hd-282.png');
+background-repeat:no-repeat;
+background-position:center;
+background-attachment: fixed;
+} */
+label{
+font-size:25px;
+font-family:Verdana;
+margin:10px;
+margin-bottom:5px;
+}
+.myclass1{
+border-radius:2px;
+width:100%;
+height:20px;
+box-shadow:0 0 0 0.5px;
+font-size:20px;
+
+}
+.myclass2{
+text-align:center;
+font-family:cursive;
+font-size:40px;
+background-color:#1E90FF;
+}
+input[type=submit]{
+padding:10px 10px;
+border:15px solid;
+background-color:#1E90FF;
+color:white;
+font-size:15px;
+}
+input[type=text]{
+font-family:Times New Romans;
+font-size:15px;
+}
+textarea{
+width:100%;
+border-radius:2px;
+box-shadow:0 0 0 0.5px;
+font-size:18px;
+}
+select{
+font-size:10px;
+border-radius:2px;
+width:100%;
+height:25px;
+box-shadow:0 0 0 0.5px;
+font-size:20px;
+}
+</style>
+<meta charset="UTF-8">
+<title>PostJob</title>
+</head>
+<body>
+    <div >
+      <h1 class="myclass2">Post a Job</h1>
+      <hr>
+    <form action="/post-job" method="post">
+      <div >
+        <label>Company Name</label><br>
+        <input type="text" class="myclass1" name="company_name" required><br><br>
+        <label >Title</label><br>
+        <input type="text" class="myclass1" name="title" required><br><br>
+        <label >Location</label><br>
+        <input type="text" class="myclass1" name="location"><br><br>
+         <label >Educations and Interest</label>
+        <select id="educ" class="" name="educ">
+           <option value="na">Choose one:</option>
+           <option value="Animation and Multimedia">Animation and Multimedia</option>
+           <option value="Arts and Humanities">Arts and Humanities</option>
+           <option value="Automobiles">Automobiles</option>
+           <option value="Civil Services">Civil Services</option>
+           <option value="Fashion Design">Fashion Design</option>
+           <option value="Hotel Management">Hotel Management</option>
+           <option value="IT/Computer">IT/Computer</option>
+           <option value="Marketing">Marketing</option>
+        </select><br><br>
+        <label >Skills</label>
+        <input class="myclass1" type="text" name="skills"><br><br>
+        <label >Experience</label><br>
+        <input class="myclass1" type="text" name="exp"><br><br>
+        <label >Description</label><br>
+        <textarea name="description" rows="3" required></textarea><br><br>
+        <input type="submit"  name="button" value="Publish">
+      </div>
+    </form>
+    </div>
+  </body>
+</html>
