@@ -173,7 +173,6 @@ app.get("/post-job", function(req, res) {
 
 app.get("/jobs", function(req, res) {
   if (req.isAuthenticated()) {
-    loginStatus = true;
     if (loginStatus) {
       loginStatus = false;
       Job.find({}, function(err, foundJob) {
@@ -183,14 +182,15 @@ app.get("/jobs", function(req, res) {
           logStatus: "success"
         });
       });
-    }
-    Job.find({}, function(err, foundJob) {
-      res.render("jobs", {
-        jobs: foundJob,
-        logStatus: "failure",
-        user: ""
+    } else {
+      Job.find({}, function(err, foundJob) {
+        res.render("jobs", {
+          jobs: foundJob,
+          user: req.user.firstName,
+          logStatus: "failure"
+        });
       });
-    });
+    }
   } else {
     res.redirect("/signup");
   }
