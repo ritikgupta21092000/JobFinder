@@ -178,7 +178,7 @@ app.get("/jobs", function(req, res) {
       Job.find({}, function(err, foundJob) {
         res.render("jobs", {
           jobs: foundJob,
-          user: req.user.firstName,
+          user: req.user.username,
           logStatus: "success"
         });
       });
