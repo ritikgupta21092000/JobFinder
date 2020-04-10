@@ -231,6 +231,14 @@ footer {
   margin-left: 140px;
 }
 
+.jobs-user {
+  position: absolute;
+  right: 100px;
+  bottom: 610px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 1028px)
 {
   .w-100 {

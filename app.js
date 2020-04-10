@@ -15,6 +15,7 @@ const findOrCreate = require("mongoose-findorcreate");
 var postJobStatus = false;
 var registerStatus = false;
 var loginStatus = false;
+var socialUsername = "";
 
 const app = express();
 
@@ -61,9 +62,7 @@ const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   googleId: String,
-  googleName: String,
-  facebookId: String,
-  facebookName: String
+  facebookId: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -93,7 +92,7 @@ passport.use(new GoogleStrategy({
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({
       googleId: profile.id,
-      googleName: profile.displayName
+      username: profile.displayName
     }, function(err, user) {
       return cb(err, user);
     });
@@ -109,7 +108,7 @@ passport.use(new FacebookStrategy({
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({
       facebookId: profile.id,
-      facebookName: profile.displayName
+      username: profile.displayName
     }, function(err, user) {
       return cb(err, user);
     });
@@ -179,6 +178,7 @@ app.get("/jobs", function(req, res) {
       Job.find({}, function(err, foundJob) {
         res.render("jobs", {
           jobs: foundJob,
+          user: req.user.firstName,
           logStatus: "success"
         });
       });
@@ -247,6 +247,11 @@ app.get("/signin", function(req, res) {
       regStatus: "failure"
     });
   }
+});
+
+app.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
 });
 
 

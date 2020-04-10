@@ -14,6 +14,10 @@
     <%- include("partials/navbar.ejs"); -%>
 
 <% if(logStatus === "success") { %>
+  <div class="jobs-user">
+  <h6>Welcome <%= user %></h6><br>
+  <a class="btn btn-primary btn-md" href="/logout">Logout</a>
+  </div>
   <script>
   Swal.fire(
   'Successfully LoggedIn!',
