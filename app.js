@@ -173,6 +173,7 @@ app.get("/post-job", function(req, res) {
 
 app.get("/jobs", function(req, res) {
   if (req.isAuthenticated()) {
+    loginStatus = true;
     if (loginStatus) {
       loginStatus = false;
       Job.find({}, function(err, foundJob) {
