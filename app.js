@@ -61,7 +61,9 @@ const userSchema = new mongoose.Schema({
   username: String,
   password: String,
   googleId: String,
-  facebookId: String
+  googleName: String,
+  facebookId: String,
+  facebookName: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -90,7 +92,8 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({
-      googleId: profile.id
+      googleId: profile.id,
+      googleName: profile.displayName
     }, function(err, user) {
       return cb(err, user);
     });
@@ -105,7 +108,8 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({
-      facebookId: profile.id
+      facebookId: profile.id,
+      facebookName: profile.displayName
     }, function(err, user) {
       return cb(err, user);
     });
@@ -125,6 +129,7 @@ app.get('/auth/google/jobs',
   }),
   function(req, res) {
     // Successful authentication, redirect home.
+    loginStatus = true;
     res.redirect('/jobs');
   });
 
@@ -137,6 +142,7 @@ app.get('/auth/facebook/jobs',
   }),
   function(req, res) {
     // Successful authentication, redirect home.
+    loginStatus = true;
     res.redirect('/jobs');
   });
 
