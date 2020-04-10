@@ -186,7 +186,8 @@ app.get("/jobs", function(req, res) {
     Job.find({}, function(err, foundJob) {
       res.render("jobs", {
         jobs: foundJob,
-        logStatus: "failure"
+        logStatus: "failure",
+        user: ""
       });
     });
   } else {
