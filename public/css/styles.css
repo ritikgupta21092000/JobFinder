@@ -238,6 +238,27 @@ footer {
   font-size: 0.8rem;
 }
 
+.job-filter {
+  width: 300px;
+  position: absolute;
+  bottom: 300px;
+  left: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666666;
+  border: 1px solid #dbdbdb;
+}
+
+.filter-title {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
 @media (max-width: 1028px)
 {
   .w-100 {
