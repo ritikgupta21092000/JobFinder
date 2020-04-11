@@ -265,4 +265,13 @@ footer {
     width: 100%;
     height: 389.533px;
   }
+
+  .job-div {
+    width: 600px;
+    margin-left: 340px;
+  }
+
+  .job-filter {
+    bottom: 77rem;
+  }
 }
