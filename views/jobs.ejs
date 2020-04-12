@@ -102,22 +102,24 @@
     <div class="filter-title">
       <p class="job-filterP"><i class="fas fa-filter"></i>Filter</p>
     </div><hr>
-      <form class="form-group" action="/filter" method="post">
+      <form class="form-group" id = "myForm" action="/filter" method="post">
         <label for="exampleFormControlSelect1">Category</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" name="category" id="exampleFormControlSelect1" onchange="this.form.submit()">
+          <option value=""></option>
           <option value="Animation and Multimedia">Animation and Multimedia</option>
           <option value="Arts and Humanities">Arts and Humanities</option>
           <option value="Automobiles">Automobiles</option>
           <option value="Civil Services">Civil Services</option>
           <option value="Fashion Design">Fashion Design</option>
           <option value="Hotel Management">Hotel Management</option>
-          <option value="IT/Computer">IT/Computer</option>
+          <option value="IT or Computer">IT or Computer</option>
           <option value="Marketing">Marketing</option>
         </select>
         <br>
         <br>
         <label for="exampleFormControlSelect1">City</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" name="city" id="exampleFormControlSelect1" onchange="this.form.submit()">
+          <option value=""></option>
           <option>Ahmedabad</option>
           <option>Mumbai</option>
           <option>Chandigarh</option>
@@ -125,6 +127,7 @@
           <option>Kolkata</option>
           <option>Delhi</option>
           <option>Hyderabad</option>
+          <option>Banglore</option>
         </select>
       </form>
   </div>
@@ -135,9 +138,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <script type="text/javascript">
-    document.getElementByClass("form-group").submit();
-  </script>
+
 
 </body>
 <%- include("partials/footer.ejs"); -%>

@@ -331,6 +331,66 @@ app.post("/signin", function(req, res) {
   });
 });
 
+app.post("/filter", function(req, res) {
+  var category = req.body.category;
+  var city = req.body.city;
+  if (category === "" && city === "") {
+    res.redirect("/jobs");
+  } else if (category != "" && city === "") {
+    res.redirect("/jobs/" + category);
+  } else if (category === "" && city != "") {
+    res.redirect("/jobs/city/" + city);
+  } else {
+    res.redirect("/jobs/" + category + "/" + city);
+  }
+});
+
+app.get("/jobs/:categoryName", function(req, res) {
+  var requestedCategoryName = req.params.categoryName;
+  Job.find({education: requestedCategoryName}, function(err, foundJob) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("filterCompanies", {
+        jobs: foundJob,
+        category: requestedCategoryName,
+        city: ""
+      });
+    }
+  });
+});
+
+app.get("/jobs/city/:cityName", function(req, res) {
+  var requestedCityName = req.params.cityName;
+  Job.find({location: requestedCityName}, function(err, foundJob) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("filterCompanies", {
+        jobs: foundJob,
+        category: "",
+        city: requestedCityName
+      });
+    }
+  });
+});
+
+app.get("/jobs/:categoryName/:cityName", function(req, res) {
+  var requestedCategoryName = req.params.categoryName;
+  var requestedCityName = req.params.cityName;
+  Job.find({education: requestedCategoryName, location: requestedCityName}, function(err, foundJob) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("filterCompanies", {
+        jobs: foundJob,
+        category: requestedCategoryName,
+        city: requestedCityName
+      });
+    }
+  });
+});
+
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on port 3000");
 });

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobFinder</title>
+
+  <%- include("partials/link.ejs"); -%>
+
+</head>
+
+<body>
+
+  <%- include("partials/navbar.ejs"); -%>
+
+  <% if (category != "" && city === "") { %>
+
+  <%  jobs.forEach(function(job) { %>
+
+  <div class="job-div">
+    <i class="fas fa-building">
+      <h1 class="loc-p jobs-h1"><i><%= job.companyName %></i></h1>
+    </i>
+    <br>
+    <br>
+    <p>Job Title:<br><span class="title-p"><%= job.title %></span></p>
+    <br>
+    <i class="fas fa-map-marker-alt loc-logo">
+      <p class="loc-p"><%= job.location %></p>
+    </i><br>
+    <br>
+    <i class="fas fa-user-graduate">
+      <p class="loc-p"><%= job.education %></p>
+    </i>
+    <br>
+    <br>
+    <p>Skills:<br><%= job.skills %></p>
+    <br>
+    <i class="fas fa-briefcase">
+      <p class="loc-p"><%= job.experience %></p>
+    </i>
+    <br>
+    <br>
+    <p>Description:<br><%= job.description %></p><br>
+    <form class="" action="/application-form" method="post">
+      <button type="submit" class="btn btn-md btn-primary job-btn" name="apply" value="<%= job.company_name %>">Apply Here</button>
+    </form>
+  </div>
+  <%  }); %>
+  <div class="job-filter">
+    <div class="filter-title">
+      <p class="job-filterP"><i class="fas fa-filter"></i>Filter</p>
+    </div>
+    <hr>
+    <form class="form-group" id="myForm" action="/filter" method="post">
+      <label for="exampleFormControlSelect1">Category</label>
+      <input type="text" class="form-control" name="category" value="<%= category %>" onchange="this.form.submit()">
+      <br>
+      <br>
+      <label for="exampleFormControlSelect1">City</label>
+      <select class="form-control" name="city" id="exampleFormControlSelect1" onchange="this.form.submit()">
+        <option value=""></option>
+        <option>Ahmedabad</option>
+        <option>Mumbai</option>
+        <option>Chandigarh</option>
+        <option>Pune</option>
+        <option>Kolkata</option>
+        <option>Delhi</option>
+        <option>Hyderabad</option>
+      </select>
+    </form>
+  </div>
+  <%  }  %>
+
+  <% if (city != "" && category === "") { %>
+  <%  jobs.forEach(function(job) { %>
+
+  <div class="job-div">
+    <i class="fas fa-building">
+      <h1 class="loc-p jobs-h1"><i><%= job.companyName %></i></h1>
+    </i>
+    <br>
+    <br>
+    <p>Job Title:<br><span class="title-p"><%= job.title %></span></p>
+    <br>
+    <i class="fas fa-map-marker-alt loc-logo">
+      <p class="loc-p"><%= job.location %></p>
+    </i><br>
+    <br>
+    <i class="fas fa-user-graduate">
+      <p class="loc-p"><%= job.education %></p>
+    </i>
+    <br>
+    <br>
+    <p>Skills:<br><%= job.skills %></p>
+    <br>
+    <i class="fas fa-briefcase">
+      <p class="loc-p"><%= job.experience %></p>
+    </i>
+    <br>
+    <br>
+    <p>Description:<br><%= job.description %></p><br>
+    <form class="" action="/application-form" method="post">
+      <button type="submit" class="btn btn-md btn-primary job-btn" name="apply" value="<%= job.company_name %>">Apply Here</button>
+    </form>
+  </div>
+  <%  }); %>
+  <div class="job-filter">
+    <div class="filter-title">
+      <p class="job-filterP"><i class="fas fa-filter"></i>Filter</p>
+    </div>
+    <hr>
+    <form class="form-group" id="myForm" action="/filter" method="post">
+      <label for="exampleFormControlSelect1">Category</label>
+      <input type="text" class="form-control" name="category" onchange="this.form.submit()">
+      <br>
+      <br>
+      <label for="exampleFormControlSelect1">City</label>
+      <input type="text" class="form-control" name="city" value="<%= city %>">
+    </form>
+  </div>
+  <% } %>
+
+  <% if(category != "" && city != "") { %>
+    <%  jobs.forEach(function(job) { %>
+
+    <div class="job-div">
+      <i class="fas fa-building">
+        <h1 class="loc-p jobs-h1"><i><%= job.companyName %></i></h1>
+      </i>
+      <br>
+      <br>
+      <p>Job Title:<br><span class="title-p"><%= job.title %></span></p>
+      <br>
+      <i class="fas fa-map-marker-alt loc-logo">
+        <p class="loc-p"><%= job.location %></p>
+      </i><br>
+      <br>
+      <i class="fas fa-user-graduate">
+        <p class="loc-p"><%= job.education %></p>
+      </i>
+      <br>
+      <br>
+      <p>Skills:<br><%= job.skills %></p>
+      <br>
+      <i class="fas fa-briefcase">
+        <p class="loc-p"><%= job.experience %></p>
+      </i>
+      <br>
+      <br>
+      <p>Description:<br><%= job.description %></p><br>
+      <form class="" action="/application-form" method="post">
+        <button type="submit" class="btn btn-md btn-primary job-btn" name="apply" value="<%= job.company_name %>">Apply Here</button>
+      </form>
+    </div>
+    <%  }); %>
+    <div class="job-filter">
+      <div class="filter-title">
+        <p class="job-filterP"><i class="fas fa-filter"></i>Filter</p>
+      </div>
+      <hr>
+      <form class="form-group" id="myForm" action="/filter" method="post">
+        <label for="exampleFormControlSelect1">Category</label>
+        <input type="text" class="form-control" name="category" value="<%= category %>" onchange="this.form.submit()">
+        <br>
+        <br>
+        <label for="exampleFormControlSelect1">City</label>
+        <input type="text" class="form-control" name="city" value="<%= city %>" onchange="this.form.submit">
+      </form>
+    </div>
+  <% } %>
+</body>
+
+<%- include("partials/footer.ejs"); -%>
+
+</html>
