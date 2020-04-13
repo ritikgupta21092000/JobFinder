@@ -59,17 +59,18 @@
 
 .work-button {
   position: absolute;
-  right: 10px;
+  right: 20px;
   bottom: 0px;
 }
 
 .carousel-font {
   font-size: 2.5rem;
-  font-family: "Patua One" , cursive;
+  font-family: 'Libre Baskerville', serif;
   font-weight: bold;
   word-spacing: 5px;
   line-height: 52px;
-  color: red;
+  color: #FFFF00;
+  text-shadow: 2px 2px 5px;
 }
 
 .row {
