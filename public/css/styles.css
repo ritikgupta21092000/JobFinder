@@ -13,6 +13,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 #navbarSupportedContent {
   margin-right: 150px;
 }
@@ -55,7 +59,7 @@
 
 .work-button {
   position: absolute;
-  right: 50px;
+  right: 10px;
   bottom: 0px;
 }
 
@@ -258,6 +262,7 @@ footer {
   font-size: 1.4rem;
   text-decoration: underline;
 }
+
 
 @media (max-width: 1028px)
 {
