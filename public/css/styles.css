@@ -156,6 +156,23 @@ h3 {
   margin-top: 50px;
 }
 
+#download-app {
+  background-color: #ff4c68;
+  padding: 7% 15%;
+  color: #fff;
+  text-align: center;
+}
+
+.download-h3 {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 5rem;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
 .job-div {
   width: 800px;
   margin-left: auto;
@@ -270,6 +287,10 @@ footer {
   .w-100 {
     width: 100%;
     height: 389.533px;
+  }
+
+  .companies-below-carousel {
+    padding-left: 70px;
   }
 
   .job-div {
