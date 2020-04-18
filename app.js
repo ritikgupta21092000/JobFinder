@@ -163,6 +163,14 @@ app.get("/index", function(req, res) {
   res.redirect("/");
 });
 
+app.get("/how-does-it-work", function (req, res) {
+  res.render("how-does-it-work");
+});
+
+app.get("/resume", function (req, res) {
+  res.render("resume");
+});
+
 app.get("/dashboard", function(req, res) {
   res.render("dashboard");
 });
