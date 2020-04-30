@@ -281,6 +281,10 @@ footer {
   text-decoration: underline;
 }
 
+.fa-google-play, .fa-apple {
+  padding-right: 8px;
+}
+
 
 @media (max-width: 1028px)
 {
