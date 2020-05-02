@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style type="text/css">
+  #middle {
+    padding: 60px;
+    text-align: center;
+  }
+
+  #info {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+  }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>Job Finder</title>
+  <%- include("partials/link.ejs"); -%>
+  <!-- BootStrap Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Link  -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Patua+One&display=swap" rel="stylesheet">
+
+  <!-- Awesome Fonts -->
+  <script src="https://kit.fontawesome.com/88ee6d8306.js" crossorigin="anonymous"></script>
+  <!-- BootStrap Javascript Link -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/"><img class="navbar-brand" src="images/job-finder-logo.png" alt="job-finder-logo" href = "/"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/how-does-it-work">How does it works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/jobs">Browse Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">SignIn</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="middle">
+
+    <h1 style="text-align:center;">How Does It Work?</h1>
+    <br>
+    <br>
+    <h3 style="text-align:center;color:blue;">For people who want to be hired</h3>
+    <br>
+    <p id="info">We at the team of JobFinder always want the best for you.
+      We like to make sure that a person finds a job which he enjoys working in as it will
+      increase his own productivity and also be beneficial for the company. But how do we achieve that?
+      We have a very different approach in how we allocate people to a company for interviews. We look
+      at the interests and expectations of an individual and pick out the best possible options for him/her.
+      We also look at various other aspects such as previous work experience, area of preference for jobs etc.
+      as parameters when it comes to suggesting the right jobs to you.This is what makes JobFinder
+      such a trusted entity when it comes to selecting the right job.
+    </p>
+
+    <br>
+    <br>
+    <h3 style="text-align:center;color:red;">For people who want to hire</h3>
+    <br>
+    <p id="info">Our system has a filter basis which will make the task for companies like yours easier
+      when it comes to performing interviews. We will select only those candidates who perfectly match
+      and satisfy the company's requirements for the further internal processes. This will make your selection
+      process much more easier and efficient and also reduce the cost.
+    </p>
+  </div>
+
+</body>
+
+<footer>
+
+  <a href="#"><i class="social-icon fab social-media-icon fa-facebook-f"></i></a>
+  <a href="#"><i class="social-icon fab social-media-icon fa-twitter"></i></a>
+  <a href="#"><i class="social-icon fab social-media-icon fa-instagram"></i></a>
+  <a href="mailto:guptaritik349@gmail.com"><i class="social-icon fas social-media-icon fa-envelope-square"></i></a>
+
+  <p>© Copyright 2020 JobFinder-By Ritik Gupta , Ritesh Dewoolkar , Rohan Kuckian.</p>
+</footer>
+
+</html>

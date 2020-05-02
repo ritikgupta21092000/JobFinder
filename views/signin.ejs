@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("partials/link.ejs"); -%>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/job-finder-logo.ico">
+  <style type="text/css">
+    body {
+      padding-top: 20vh;
+
+      background-color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-container {
+      /*   background-color:lightblue;
+ */
+      width: 425px;
+      height: 600px;
+      padding: 20px 30px;
+      box-shadow: 0 0 10px;
+      margin: auto;
+      box-radius: 100px;
+    }
+
+    .myclass1 {
+      text-align: center;
+      font-size: 35px;
+      font-family: cursive;
+      font-style: italic;
+      margin-left: 100px;
+    }
+
+    input.myclass2 {
+      text-align: center;
+      width: 400px;
+      border-radius: 5px;
+      height: 35px;
+      margin-left: -20px;
+    }
+
+    input[type=submit] {
+      text-align: center;
+      background-color: #1E90FF;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-left: 90px;
+    }
+
+    label {
+      font-size: 20px;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>JobFinder</title>
+  <!-- sweetalert2 css -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <!-- sweetalert2 Javascript -->
+  <script src="sweetalert2.min.js" charset="utf-8"></script>
+  <!-- Awesome Fonts -->
+  <script src="https://kit.fontawesome.com/88ee6d8306.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <% if(regStatus === "success") { %>
+    <script>
+    Swal.fire(
+    'Successfully Registered!',
+    'You clicked the button!',
+    'success'
+    )
+    </script>
+    <% } %>
+
+  <div class="form-container">
+    <div class="row">
+      <div class="col-sm-8">
+        <form class="" action="/signin" method="post">
+          <i class="fas fa-user-circle user-icon"></i>
+          <h1 class="myclass1">Sign In</h1>
+          <label>Enter Username:</label>
+          &nbsp;<p><input class="myclass2" type="text" name="username" placeholder="Enter Username" required></p>
+          <label>Enter Password:</label>
+          <p><input class="myclass2" type="password" name="password" placeholder="Enter Password" required></p><br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp; <input type="submit" id="submit" value="Sign In" style="width:200px;height:30px;">
+          <br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/forgotpassword">&nbsp;&nbsp;&nbsp;&nbsp;forgot password?</a><br>
+        </form>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card social-block signin-social">
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+              <i class="fab fa-google"></i>
+              Sign In with Google
+            </a>
+          </div>
+          <div class="card-body">
+            <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+              <i class="fab fa-facebook"></i>
+              Sign In with Faebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include("partials/footer.ejs"); -%>
+
+</html>

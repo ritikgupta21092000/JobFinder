@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>JobFinder</title>
+  <%- include("partials/link.ejs"); -%>
+  <style>
+    body {
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <% if(logStatus === "success") { %>
+
+  <script>
+    Swal.fire(
+      'Successfully LoggedIn!',
+      'You clicked the button!',
+      'success'
+    )
+  </script>
+  <% } %>
+  <div class="">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="jobs-user">
+        <h6>Welcome <%= user %></h6><br>
+        <a class="btn btn-primary btn-md" href="/logout">Logout</a>
+      </div>
+      <a href="/index"><img src="/images/job-finder-logo.png" class="navbar-brand" alt="job-finder-logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/jobs">Jobs</a>
+          </li>
+          <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Recruiters</a>
+      </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="/companies">Companies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">SignUp/SignIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">AboutUs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">ContactUs</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <% jobs.forEach(function(job) { %>
+  <div class="job-div">
+    <i class="fas fa-building">
+      <h1 class="loc-p jobs-h1"><i><%= job.companyName %></i></h1>
+    </i>
+    <br>
+    <br>
+    <p>Job Title:<br><span class="title-p"><%= job.title %></span></p>
+    <br>
+    <i class="fas fa-map-marker-alt loc-logo">
+      <p class="loc-p"><%= job.location %></p>
+    </i><br>
+    <br>
+    <i class="fas fa-user-graduate">
+      <p class="loc-p"><%= job.education %></p>
+    </i>
+    <br>
+    <br>
+    <p>Skills:<br><%= job.skills %></p>
+    <br>
+    <i class="fas fa-briefcase">
+      <p class="loc-p"><%= job.experience %></p>
+    </i>
+    <br>
+    <br>
+    <p>Description:<br><%= job.description %></p><br>
+    <form class="" action="/application-form" method="post">
+      <button type="submit" class="btn btn-md btn-primary job-btn" name="apply" value="<%= job.company_name %>">Apply Here</button>
+    </form>
+  </div>
+  <% }); %>
+
+  <div class="job-filter">
+    <div class="filter-title">
+      <p class="job-filterP"><i class="fas fa-filter"></i>Filter</p>
+    </div><hr>
+      <form class="form-group" id = "myForm" action="/filter" method="post">
+        <label for="exampleFormControlSelect1">Category</label>
+        <select class="form-control" name="category" id="exampleFormControlSelect1" onchange="this.form.submit()">
+          <option value=""></option>
+          <option value="Animation and Multimedia">Animation and Multimedia</option>
+          <option value="Arts and Humanities">Arts and Humanities</option>
+          <option value="Automobiles">Automobiles</option>
+          <option value="Civil Services">Civil Services</option>
+          <option value="Fashion Design">Fashion Design</option>
+          <option value="Hotel Management">Hotel Management</option>
+          <option value="IT or Computer">IT or Computer</option>
+          <option value="Marketing">Marketing</option>
+        </select>
+        <br>
+        <br>
+        <label for="exampleFormControlSelect1">City</label>
+        <select class="form-control" name="city" id="exampleFormControlSelect1" onchange="this.form.submit()">
+          <option value=""></option>
+          <option>Ahmedabad</option>
+          <option>Mumbai</option>
+          <option>Chandigarh</option>
+          <option>Pune</option>
+          <option>Kolkata</option>
+          <option>Delhi</option>
+          <option>Hyderabad</option>
+          <option>Banglore</option>
+        </select>
+      </form>
+  </div>
+
+
+  <!-- BootStrap Javascript Link -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+<%- include("partials/footer.ejs"); -%>
+
+</html>

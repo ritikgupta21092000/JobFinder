@@ -1,0 +1,308 @@
+.navbar {
+  position: relative;
+}
+
+.navbar-brand {
+  height: 80px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+#navbarSupportedContent {
+  margin-right: 150px;
+}
+
+.home-session {
+  position: absolute;
+  top: 10px;
+  right: 80px;
+}
+
+.find-the-right-people {
+  height: 519.667px;
+}
+
+.group-of-people-using-laptop {
+  width: 1366px;
+  height: 519.667px;
+}
+
+.php-job-portal {
+  height: 519.667px;
+}
+
+.carousel slide {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.inside-carousel {
+  position: absolute;
+  bottom: 80px;
+  left: 90px;
+  font-size: 2rem;
+  font-family: "Montserrat" , sans-serif;
+  font-weight: bold;
+  color: black;
+  z-index: 2;
+}
+
+.work-button {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+}
+
+.carousel-font {
+  font-size: 2.5rem;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  word-spacing: 5px;
+  line-height: 52px;
+  color: #FFFF00;
+  text-shadow: 2px 2px 5px;
+}
+
+.row {
+  margin-top: 35px;
+}
+
+.used-by-font {
+  font-size: 2rem;
+  font-family: "Montserrat" , sans-serif;
+  font-weight: bold;
+  text-align: center;
+  word-spacing: 5px;
+  margin: 20px 0px 50px 0px;
+}
+
+.logo {
+  width: 259px;
+  height: 194px;
+  margin-left: 50px;
+}
+
+#great-about-jobfinder h1 {
+  text-align: center;
+  margin: 100px 0px;
+}
+
+.browse-portfolios , .pay {
+  margin-left: 42px;
+}
+
+img , h3 {
+  display: inline-block;
+  font-weight: bold;
+}
+
+h3 {
+  margin-left: 30px;
+}
+
+.browse-portfolios-h4 , .pay-h4 {
+  margin-left: 42px;
+}
+
+#great-about-jobfinder {
+  background-color: #fff;
+}
+
+#great-about-jobfinder h4 {
+  margin-top: 30px;
+  font-family: "Montserrat" , sans-serif;
+  text-align: justify;
+  line-height: 2.5rem;
+}
+
+#companies-below-carousel {
+  background-color: #fff;
+}
+
+
+.view-bids , .view-bids-h4 , .live-chat , .live-chat-h4 , .track-progress , .track-progress-h4 , .support , .support-h4 {
+  margin-left: 42px;
+}
+
+.social-media-icon {
+  margin: 20px 5px;
+  font-size: 1.2rem;
+  color: black;
+}
+
+
+.post-job {
+  font-family: "Montserrat" , sans-serif;
+  font-size: 1.5rem;
+}
+
+
+.user-icon {
+  margin-left: 42%;
+  font-size: 70px;
+}
+
+.post-job-button {
+  margin-top: 50px;
+}
+
+#download-app {
+  background-color: #ff4c68;
+  padding: 7% 15%;
+  color: #fff;
+  text-align: center;
+}
+
+.download-h3 {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 5rem;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.job-div {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding-left: 20px;
+  font-family: "Montserrat" , sans-serif;
+  font-size: 1.4rem;
+  border-left-color: rgb(102, 187, 85);
+  border-left-style: solid;
+  border-left-width: 4px;
+  box-shadow: 6px 3px 8px #d4d4d4;
+}
+
+.loc-p {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.job-btn {
+  margin-left: 35%;
+  margin-bottom: 2%;
+}
+
+.jobs-h1 {
+  color: #1295c9;
+}
+
+.title-p {
+  font-family: 'Lobster' , cursive;
+  font-size: 1.8rem;
+}
+
+.all-companies-innerwrap {
+  width: 990px;
+  margin: 10px auto 0 auto;
+  background-color: #fff;
+  border-left: 4px solid #6c5;
+  box-shadow: 6px 3px 8px #d4d4d4;
+  font-family: "Montserrat" , sans-serif;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+
+.all-companies-innerwrap a {
+  margin-left: 5px;
+  color: black;
+}
+
+.comp {
+  color: red;
+  text-align: center;
+}
+
+footer {
+  margin-top: 80px;
+  text-align: center;
+  font-family: "Montserrat" , sans-serif;
+  font-size: 1.2rem;
+}
+
+
+.social-block {
+  position: relative;
+  width: 287px;
+  left: 100px;
+  top: 100px;
+}
+
+.signin-social {
+  position: relative;
+  left: 200px;
+  top: 100px;
+  width: 287px;
+}
+
+.fa-user-circle {
+  margin-left: 140px;
+}
+
+.jobs-user {
+  position: absolute;
+  right: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+}
+
+.job-filter {
+  width: 300px;
+  position: absolute;
+  bottom: 300px;
+  left: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666666;
+  border: 1px solid #dbdbdb;
+}
+
+.filter-title {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.fa-google-play, .fa-apple {
+  padding-right: 8px;
+}
+
+
+@media (max-width: 1028px)
+{
+  .w-100 {
+    width: 100%;
+    height: 389.533px;
+  }
+
+  .companies-below-carousel {
+    padding-left: 70px;
+  }
+
+  .job-div {
+    width: 600px;
+    margin-left: 340px;
+  }
+
+  .job-filter {
+    bottom: 60rem;
+  }
+}
