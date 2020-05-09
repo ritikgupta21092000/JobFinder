@@ -6,3 +6,7 @@
 
 ## Link to JobFinder
 [JobFinder Link](https://morning-island-46726.herokuapp.com/)
+
+## Front-End of Website
+![](public/images/front-end1.png)
+![](public/images/front-end2.png)
