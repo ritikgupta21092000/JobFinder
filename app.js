@@ -361,13 +361,13 @@ app.post("/filter", function (req, res) {
 });
 
 app.post("/applyForJob", function (req, res) {
-  const BucketName = "jobfinder3rbucket";
-  accessKeyId = "ASIAYO6OH36RA5GSIUDZ";
-  secretAccessKey = "weDneswsYQ1wxnHqmIXDcRanGbyUNPAjuKPw3FwR";
+  const BucketName = process.env.BucketName;
+  accessKeyId = process.env.accessKeyId;
+  secretAccessKey = process.env.secretAccessKey;
   let s3bucket = new AWS.S3({
     accessKeyId: accessKeyId,
     secretAccessKey: secretAccessKey,
-    sessionToken: "FwoGZXIvYXdzEGYaDJAMdNXsctWdEVr3ESLIAUKRMF27O5qoTryyjEXtANCD0yD+MUWAv5/SrdtQ9LZY25oAaDcHpBMq8hOUMybP3ALIlhqxA/UBm6IF5MRnX/iZCY4wb8GU/bQII08VcGZx8h5QCOSxyHjunxoSzi6UPxhr4ktYpx5mg93zVgOAa7RdL9RqSehsW3FDA645ztHnxfTWo7w4kPte6i91/z1OoK25Q9w2tVNwX2SpdK5F2+dwbgCtAbZL5qGFysh4j/ngZPRvSc+FYXK+Hhm6HSV/IKNlhijg3t1FKKuH3YIGMi3NMzhDpZOXexT12hn5No7NRqvNyJW6Y3PgGRxSuWRMf0bfFAtqcbIxtF78EEI=",
+    sessionToken: process.env.sessionToken,
     Bucket: BucketName
   });
 
