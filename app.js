@@ -11,6 +11,8 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const AWS = require("aws-sdk");
+const fileUpload = require("express-fileupload");
 
 var postJobStatus = false;
 var registerStatus = false;
@@ -19,12 +21,13 @@ var socialUsername = "";
 
 const app = express();
 
-app.use(bodyParser.urlencoded({
+app.use(express.urlencoded({
   extended: true
 }));
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.use(fileUpload());
 
 app.use(session({
   secret: "Our little secret",
@@ -361,6 +364,8 @@ app.post("/filter", function (req, res) {
 });
 
 app.post("/applyForJob", function (req, res) {
+  console.log(req.files);
+
   const BucketName = process.env.BucketName;
   accessKeyId = process.env.accessKeyId;
   secretAccessKey = process.env.secretAccessKey;
@@ -399,7 +404,6 @@ app.post("/applyForJob", function (req, res) {
     })
   })
 
-  console.log(req.files);
 })
 
 app.get("/jobs/:categoryName", function (req, res) {
