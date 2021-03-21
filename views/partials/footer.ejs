@@ -9,3 +9,14 @@
 
   <p>© Copyright 2020 JobFinder-By Ritik Gupta , Ritesh Dewoolkar , Rohan Kuckian.</p>
 </footer>
+
+<script src="https://d1iowfykic6sfj.cloudfront.net/lex-web-ui-loader.min.js"></script>
+<script>
+  var loaderOpts = {
+    baseUrl: 'https://d1iowfykic6sfj.cloudfront.net/',
+    shouldLoadMinDeps: true
+  };
+  var loader = new ChatBotUiLoader.IframeLoader(loaderOpts);
+  loader.load()
+    .catch(function (error) { console.error(error); });
+</script>
