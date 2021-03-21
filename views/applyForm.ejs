@@ -1,98 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>JobFinder</title>
+  <title>JobFinder</title>
 
-<!-- Favicon -->
-<link rel="icon" href="/images/job-finder-logo.ico">
-<!-- Font Link  -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Patua+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="/images/job-finder-logo.ico">
+  <!-- Font Link  -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Patua+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
-<!-- Awesome Fonts -->
-<script src="https://kit.fontawesome.com/88ee6d8306.js" crossorigin="anonymous"></script>
+  <!-- Awesome Fonts -->
+  <script src="https://kit.fontawesome.com/88ee6d8306.js" crossorigin="anonymous"></script>
 
 
-<style>
-.apply-for-job{
-text-align:center;
-font-family:cursive;
-font-size:40px;
-background-color:#1E90FF;
-color:white;
-padding:5px;
-}
-.myclass1{
-box-shadow:0 0 0 2px;
-height:550px;
-width:90%;
-margin:auto;
-}
-label{
-font-size:20px;
-font-family:Verdana;
-}
-.myclass2{
-width:80%;
-height:25px;
-font-size:20px;
-border-radius:5px;
-}
+  <style>
+    .apply-for-job {
+      text-align: center;
+      font-family: cursive;
+      font-size: 40px;
+      background-color: #1E90FF;
+      color: white;
+      padding: 5px;
+    }
 
-input[name=edu]{
- font-size:50px;
- font-family:Verdana;
-}
-input[type=file]{
-font-size:15px;
-padding:3px 10px;
-}
-input[type=submit]{
-padding:10px 10px;
-border:15px solid;
-background-color:#1E90FF;
-color:white;
-font-size:15px;
-}
+    .myclass1 {
+      box-shadow: 0 0 0 2px;
+      height: 550px;
+      width: 90%;
+      margin: auto;
+    }
 
-footer {
-  margin-top: 80px;
-  text-align: center;
-  font-family: "Montserrat" , sans-serif;
-  font-size: 1.2rem;
-}
+    label {
+      font-size: 20px;
+      font-family: Verdana;
+    }
 
-.fab , .fas {
-  color: black;
-}
+    .myclass2 {
+      width: 80%;
+      height: 25px;
+      font-size: 20px;
+      border-radius: 5px;
+    }
 
-</style>
-<meta charset="UTF-8">
+    input[name=edu] {
+      font-size: 50px;
+      font-family: Verdana;
+    }
+
+    input[type=file] {
+      font-size: 15px;
+      padding: 3px 10px;
+    }
+
+    input[type=submit] {
+      padding: 10px 10px;
+      border: 15px solid;
+      background-color: #1E90FF;
+      color: white;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+    }
+
+    .fab,
+    .fas {
+      color: black;
+    }
+  </style>
+  <meta charset="UTF-8">
 </head>
-<body>
-<div class="apply-for-job">
-<i>Apply for Job</i>
-</div><br>
-<div class="myclass1">
-  <form action="" method="post"><br>
-    &nbsp;&nbsp;<label>Full Name</label><br><br>
-    &nbsp;&nbsp;<input class="myclass2" type="text" name="fname" placeholder="" required><br><br>
-    <label>&nbsp;&nbsp;Enter your age</label><br><br>
-    &nbsp;&nbsp;<input class="myclass2" type="number" name="age" placeholder="" required><br><br>
-    <label>&nbsp;&nbsp;Are you willing to pursue some education while doing this job?</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="yes">Yes
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="no">No<br><br><br>
-    <label>&nbsp;&nbsp;Years Of Experience</label><br><br>
-    &nbsp;&nbsp;<input class="myclass2" type="number" name="exp" placeholder="" required><br><br>
-     <label>&nbsp;&nbsp;Have u had any experience working in job of similar domain?</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="yes">Yes
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="no">No<br><br><br>
-    <label>&nbsp;&nbsp;Upload your Resume</label>
-    &nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="resume" accept="image/*"><br><br><br>
 
-    <input type="submit" name="button" value="Upload">
-  </form>
-</div>
+<body>
+  <div class="apply-for-job">
+    <i>Apply for Job</i>
+  </div><br>
+  <div class="myclass1">
+    <form action="/applyForJob" method="post" enctype="multipart/form-data"><br>
+      &nbsp;&nbsp;<label>Full Name</label><br><br>
+      &nbsp;&nbsp;<input class="myclass2" type="text" name="fname" placeholder="" required><br><br>
+      <label>&nbsp;&nbsp;Enter your age</label><br><br>
+      &nbsp;&nbsp;<input class="myclass2" type="number" name="age" placeholder="" required><br><br>
+      <label>&nbsp;&nbsp;Are you willing to pursue some education while doing this job?</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="yes">Yes
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="no">No<br><br><br>
+      <label>&nbsp;&nbsp;Years Of Experience</label><br><br>
+      &nbsp;&nbsp;<input class="myclass2" type="number" name="exp" placeholder="" required><br><br>
+      <label>&nbsp;&nbsp;Have u had any experience working in job of similar domain?</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="yes">Yes
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="edu" value="no">No<br><br><br>
+      <label>&nbsp;&nbsp;Upload your Resume</label>
+      &nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="fileName"><br><br><br>
+
+      <input type="submit" name="button" value="Upload">
+    </form>
+  </div>
 </body>
 
 <%- include("partials/footer.ejs"); -%>
