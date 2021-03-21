@@ -96,7 +96,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://morning-island-46726.herokuapp.com/auth/google/jobs",
+  callbackURL: "http://jobfinder-env-2.eba-m6tpn2iy.us-east-1.elasticbeanstalk.com/auth/google/jobs",
   userProfileUrl: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
   function (accessToken, refreshToken, profile, cb) {
